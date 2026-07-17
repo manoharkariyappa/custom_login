@@ -5,7 +5,7 @@ app_description = "Login form Customization"
 app_email = "manohar.kariyappa@gmail.com"
 app_license = "mit"
 
-after_install = "custom_login.install.after_install"
+after_install = "custom_login.custom_login.install.after_install"
 # Apps
 # ------------------
 
