@@ -1,0 +1,1209 @@
+{% extends "templates/web.html" %}
+
+{% block navbar %}
+{% if show_language_picker %}
+{{ super() }}
+{% endif %}
+{% endblock %}
+
+{% block head_include %}
+{{ include_style('login.bundle.css') }}
+
+<style>
+    /* ============================================================
+	   MODERN FRAPPE LOGIN DESIGN
+	============================================================ */
+
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        background: #f3f6ff;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .navbar,
+    .web-footer {
+        display: none !important;
+    }
+
+    .page_content,
+    .page-content-wrapper,
+    .web-page-content {
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .login-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        box-sizing: border-box;
+        background:
+            radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.12), transparent 30%),
+            radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08), transparent 30%),
+            #f5f7ff;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 1180px;
+        min-height: 720px;
+        display: grid;
+        grid-template-columns: 43% 57%;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(30, 41, 59, 0.15);
+    }
+
+    /* ============================================================
+	   LEFT PANEL
+	============================================================ */
+
+    .login-left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        color: #ffffff;
+        overflow: hidden;
+        background: linear-gradient(145deg,
+                #2636d9 0%,
+                #414eef 45%,
+                #6558e8 100%);
+    }
+
+    .login-left::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        top: -300px;
+        right: -250px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .login-left::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        bottom: -260px;
+        left: -200px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .brand {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+    .brand img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+    .welcome-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 125px;
+    }
+
+    .welcome-content h1 {
+        color: #ffffff;
+        font-size: 44px;
+        font-weight: 750;
+        letter-spacing: -1.5px;
+        margin: 0 0 15px;
+    }
+
+    .welcome-content p {
+        max-width: 360px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 17px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .feature-card {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.11);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .feature-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.17);
+    }
+
+    .feature-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .feature-card h3 {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 650;
+        margin: 0 0 8px;
+    }
+
+    .feature-card p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Decorative dots */
+
+    .dots {
+        position: absolute;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 6px);
+        gap: 10px;
+    }
+
+    .dots span {
+        width: 6px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+    }
+
+    .dots-top {
+        top: 75px;
+        right: 45px;
+    }
+
+    .dots-bottom {
+        bottom: 35px;
+        left: 35px;
+    }
+
+    /* ============================================================
+	   RIGHT PANEL
+	============================================================ */
+
+    .login-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 55px 80px;
+        background: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .auth-wrapper {
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .mobile-logo {
+        display: none;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .mobile-logo img {
+        max-width: 150px;
+        max-height: 65px;
+        object-fit: contain;
+    }
+
+    .auth-heading {
+        margin-bottom: 35px;
+    }
+
+    .auth-heading h2 {
+        color: #172036;
+        font-size: 31px;
+        font-weight: 750;
+        letter-spacing: -0.8px;
+        margin: 0 0 10px;
+    }
+
+    .auth-heading p {
+        color: #7b8498;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    /* ============================================================
+	   FORM FIELDS
+	============================================================ */
+
+    .login-page .form-group {
+        margin-bottom: 23px;
+    }
+
+    .login-page .field-label {
+        display: block;
+        color: #252c40;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 9px;
+    }
+
+    .input-container {
+        position: relative;
+    }
+
+    .input-container .form-control {
+        width: 100%;
+        height: 56px;
+        padding: 0 58px 0 50px;
+        border: 1px solid #dce1eb;
+        border-radius: 11px;
+        background: #ffffff;
+        color: #182033;
+        font-size: 15px;
+        box-shadow: none !important;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+
+    .input-container .form-control::placeholder {
+        color: #a1a9b8;
+    }
+
+    .input-container .form-control:focus {
+        border-color: #4656ef;
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(70, 86, 239, 0.1) !important;
+    }
+
+    .input-icon {
+        position: absolute;
+        top: 50%;
+        left: 17px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        color: #8b94a8;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    .input-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 17px;
+        z-index: 3;
+        color: #4b5bea !important;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transform: translateY(-50%);
+    }
+
+    /* ============================================================
+	   LOGIN OPTIONS
+	============================================================ */
+
+    .login-options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 26px;
+    }
+
+    .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #5e677a;
+        font-size: 14px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .remember-me input {
+        width: 17px;
+        height: 17px;
+        margin: 0;
+        accent-color: #4656ef;
+    }
+
+    .forgot-password-message {
+        margin: 0;
+    }
+
+    .forgot-password-message a {
+        color: #4656ef !important;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none !important;
+    }
+
+    .forgot-password-message a:hover {
+        text-decoration: underline !important;
+    }
+
+    /* ============================================================
+	   BUTTONS
+	============================================================ */
+
+    .login-page .btn-login,
+    .login-page .btn-forgot,
+    .login-page .btn-signup,
+    .login-page .btn-login-with-email-link {
+        width: 100%;
+        height: 55px;
+        border: 0 !important;
+        border-radius: 11px !important;
+        background: linear-gradient(135deg, #4354ef, #5748ef) !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 650 !important;
+        box-shadow: 0 10px 25px rgba(70, 86, 239, 0.25);
+        transition: all 0.2s ease;
+    }
+
+    .login-page .btn-login:hover,
+    .login-page .btn-forgot:hover,
+    .login-page .btn-signup:hover,
+    .login-page .btn-login-with-email-link:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 30px rgba(70, 86, 239, 0.32);
+    }
+
+    /* ============================================================
+	   SOCIAL LOGIN
+	============================================================ */
+
+    .social-logins {
+        margin-top: 30px;
+    }
+
+    .login-divider {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 25px 0;
+        color: #9098a9;
+        font-size: 13px;
+    }
+
+    .login-divider::before,
+    .login-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #e4e8ef;
+    }
+
+    .social-login-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .login-button-wrapper {
+        width: 100%;
+    }
+
+    .login-page .btn-login-option {
+        width: 100%;
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #dce1eb !important;
+        border-radius: 10px !important;
+        background: #ffffff !important;
+        color: #333c50 !important;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none !important;
+        box-shadow: none !important;
+    }
+
+    .login-page .btn-login-option:hover {
+        background: #f8f9fc !important;
+        border-color: #c7cedc !important;
+    }
+
+    .login-page .btn-login-option svg {
+        max-width: 22px;
+        max-height: 22px;
+    }
+
+    /* ============================================================
+	   SIGNUP MESSAGE
+	============================================================ */
+
+    .sign-up-message {
+        margin-top: 28px;
+        text-align: center;
+        color: #737c8f;
+        font-size: 14px;
+    }
+
+    .sign-up-message a {
+        color: #4656ef !important;
+        font-weight: 600;
+        text-decoration: none !important;
+    }
+
+    /* ============================================================
+	   OTHER AUTH SECTIONS
+	============================================================ */
+
+    .for-email-login,
+    .for-signup,
+    .for-forgot,
+    .for-login-with-email-link {
+        width: 100%;
+    }
+
+    .auth-back-link {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .auth-back-link a {
+        color: #4656ef !important;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none !important;
+    }
+
+    /* Keep Frappe hide functionality */
+
+    .hide {
+        display: none !important;
+    }
+
+    /* ============================================================
+	   RESPONSIVE
+	============================================================ */
+
+    @media (max-width: 1000px) {
+        .login-page {
+            padding: 25px;
+        }
+
+        .login-container {
+            grid-template-columns: 40% 60%;
+        }
+
+        .login-left {
+            padding: 40px;
+        }
+
+        .welcome-content h1 {
+            font-size: 36px;
+        }
+
+        .login-right {
+            padding: 50px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .login-page {
+            padding: 0;
+            background: #ffffff;
+        }
+
+        .login-container {
+            display: block;
+            min-height: 100vh;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .login-left {
+            display: none;
+        }
+
+        .login-right {
+            min-height: 100vh;
+            padding: 40px 25px;
+        }
+
+        .mobile-logo {
+            display: block;
+        }
+
+        .auth-heading {
+            text-align: center;
+        }
+
+        .auth-heading h2 {
+            font-size: 27px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .login-right {
+            padding: 30px 20px;
+        }
+
+        .login-options {
+            gap: 15px;
+        }
+
+        .input-container .form-control {
+            height: 52px;
+        }
+
+        .login-page .btn-login,
+        .login-page .btn-forgot,
+        .login-page .btn-signup,
+        .login-page .btn-login-with-email-link {
+            height: 52px;
+        }
+    }
+</style>
+{% endblock %}
+
+
+{% macro auth_heading(title, description) %}
+<div class="auth-heading">
+    <h2>{{ _(title) }}</h2>
+    <p>{{ _(description) }}</p>
+</div>
+{% endmacro %}
+
+
+{% macro email_login_body() %}
+
+{% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}
+
+<div class="page-card-body">
+
+    <div class="form-group">
+
+        <label class="field-label" for="login_email">
+            {{ login_label or _("Email or Username") }}
+        </label>
+
+        <div class="email-field input-container">
+
+            <span class="input-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 21a8 8 0 0 0-16 0"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </span>
+
+            <input type="text" id="login_email" class="form-control"
+                placeholder="{% if login_name_placeholder %}{{ login_name_placeholder }}{% else %}{{ _('Enter your email or username') }}{% endif %}"
+                required autofocus autocomplete="username">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label class="field-label" for="login_password">
+            {{ _("Password") }}
+        </label>
+
+        <div class="password-field input-container">
+
+            <span class="input-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </span>
+
+            <input type="password" id="login_password" class="form-control" placeholder="{{ _('Enter your password') }}"
+                autocomplete="current-password" required>
+
+            <span toggle="#login_password" class="toggle-password text-muted">
+                {{ _("Show") }}
+            </span>
+
+        </div>
+
+    </div>
+
+
+    {% if not disable_user_pass_login %}
+
+    <div class="login-options">
+
+        <label class="remember-me">
+            <input type="checkbox" id="remember_me">
+            <span>{{ _("Remember me") }}</span>
+        </label>
+
+        <p class="forgot-password-message">
+            <a href="#forgot">
+                {{ _("Forgot Password?") }}
+            </a>
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+
+<div class="page-card-actions">
+
+    {% if not disable_user_pass_login %}
+
+    <button class="btn btn-primary btn-login" type="submit">
+        {{ _("Sign In") }}
+    </button>
+
+    {% endif %}
+
+
+    {% if ldap_settings and ldap_settings.enabled %}
+
+    <button class="btn btn-login btn-ldap-login" type="button">
+        {{ _("Login with LDAP") }}
+    </button>
+
+    {% endif %}
+
+</div>
+
+{% endmacro %}
+
+
+{% block page_content %}
+
+<div class="login-page">
+
+    <noscript>
+        <div class="text-center my-5">
+            <h4>{{ _("Javascript is disabled on your browser") }}</h4>
+            <p class="text-muted">
+                {{ _("You need to enable JavaScript for your app to work.") }}
+            </p>
+        </div>
+    </noscript>
+
+
+    <div class="login-container">
+
+        <!-- =====================================================
+		     LEFT BRAND PANEL
+		====================================================== -->
+
+        <div class="login-left">
+
+            <div class="dots dots-top">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <div class="brand">
+
+                {% if logo %}
+                <img src="{{ logo }}" alt="{{ app_name or _('Chromed Bioscience') }}">
+                {% endif %}
+
+                <span>
+                    {{ app_name or _("Chromed Bioscience") }}
+                </span>
+
+            </div>
+
+
+            <div class="welcome-content">
+
+                <h1>
+                    {{ _("Welcome Back!") }}
+                </h1>
+
+                <p>
+                    {{ _("Sign in to continue your journey and access everything you need in one place.") }}
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M20 6L9 17l-5-5"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    {{ _("Everything in one place") }}
+                </h3>
+
+                <p>
+                    {{ _("Manage your work, collaborate with your team and stay productive.") }}
+                </p>
+
+            </div>
+
+
+            <div class="dots dots-bottom">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+		     RIGHT AUTH PANEL
+		====================================================== -->
+
+        <div class="login-right">
+
+            <div class="auth-wrapper">
+
+
+                <!-- MOBILE LOGO -->
+
+                <div class="mobile-logo">
+
+                    {% if logo %}
+                    <img src="{{ logo }}" alt="{{ app_name or _('Chromed Bioscience') }}">
+                    {% endif %}
+
+                </div>
+
+
+                <!-- =================================================
+				     LOGIN
+				================================================== -->
+
+                <section class="for-login">
+
+                    {{ auth_heading(
+                    "Login to your account",
+                    "Enter your credentials to access your account"
+                    ) }}
+
+
+                    <form class="form-signin form-login" role="form">
+
+                        {{ email_login_body() }}
+
+                    </form>
+
+
+                    {% if social_login or login_with_email_link %}
+
+                    <div class="social-logins">
+
+
+                        {% if not disable_user_pass_login or
+                        (ldap_settings and ldap_settings.enabled) %}
+
+                        <div class="login-divider">
+                            <span>
+                                {{ _("or continue with") }}
+                            </span>
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if provider_logins %}
+
+                        <div class="social-login-buttons">
+
+                            {% for provider in provider_logins %}
+
+                            <div class="login-button-wrapper">
+
+                                <a href="{{ provider.auth_url }}" class="btn btn-login-option btn-{{ provider.name }}">
+
+                                    {% if provider.icon %}
+
+                                    {{ provider.icon }}
+
+                                    {% endif %}
+
+                                    <span>
+                                        {{ _("Continue with {0}").format(provider.provider_name) }}
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if login_with_frappe_cloud_url %}
+
+                        <div class="social-login-buttons" style="margin-top:12px;">
+
+                            <div class="login-button-wrapper">
+
+                                <a href="{{ login_with_frappe_cloud_url }}"
+                                    class="btn btn-login-option btn-login-with-frappe-cloud">
+
+                                    {{ _("Continue with Frappe Cloud") }}
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if login_with_email_link %}
+
+                        <div class="login-with-email-link social-login-buttons" style="margin-top:12px;">
+
+                            <div class="login-button-wrapper">
+
+                                <a href="#login-with-email-link" class="btn btn-login-option btn-login-with-email-link">
+
+                                    {{ _("Login with Email Link") }}
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                    {% endif %}
+
+
+                    {% if not disable_signup and not disable_user_pass_login %}
+
+                    <div class="sign-up-message">
+
+                        {{ _("Don't have an account?") }}
+
+                        <a href="#signup">
+                            {{ _("Sign up") }}
+                        </a>
+
+                    </div>
+
+                    {% endif %}
+
+                </section>
+
+
+                <!-- =================================================
+				     EMAIL LOGIN
+				================================================== -->
+
+                {% if social_login %}
+
+                <section class="for-email-login">
+
+                    {{ auth_heading(
+                    "Login with Email",
+                    "Enter your account credentials to continue"
+                    ) }}
+
+                    <form class="form-signin form-login" role="form">
+
+                        {{ email_login_body() }}
+
+                    </form>
+
+
+                    <div class="auth-back-link">
+
+                        <a href="#login">
+                            {{ _("Back to Login") }}
+                        </a>
+
+                    </div>
+
+                </section>
+
+                {% endif %}
+
+
+                <!-- =================================================
+				     SIGNUP
+				================================================== -->
+
+                <section class="for-signup {{ 'signup-disabled' if disable_signup else '' }}">
+
+                    {{ auth_heading(
+                    "Create your account",
+                    "Enter your information to get started"
+                    ) }}
+
+
+                    {% if not disable_signup %}
+
+                    {{ signup_form_template }}
+
+                    {% else %}
+
+                    <div class="text-center">
+
+                        <p class="text-muted">
+                            {{ _("Signups have been disabled for this website.") }}
+                        </p>
+
+                        <a href="/" class="btn btn-primary">
+
+                            {{ _("Home") }}
+
+                        </a>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="auth-back-link">
+
+                        <a href="#login">
+                            {{ _("Back to Login") }}
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+				     FORGOT PASSWORD
+				================================================== -->
+
+                <section class="for-forgot">
+
+                    {{ auth_heading(
+                    "Forgot Password?",
+                    "Enter your email address and we'll send you a reset link"
+                    ) }}
+
+
+                    <form class="form-signin form-forgot" role="form">
+
+                        <div class="page-card-body">
+
+                            <div class="form-group">
+
+                                <label class="field-label" for="forgot_email">
+
+                                    {{ _("Email Address") }}
+
+                                </label>
+
+
+                                <div class="email-field input-container">
+
+                                    <span class="input-icon">
+
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                                            <path d="M4 4h16v16H4z"></path>
+                                            <path d="M4 6l8 6 8-6"></path>
+
+                                        </svg>
+
+                                    </span>
+
+
+                                    <input type="email" id="forgot_email" class="form-control"
+                                        placeholder="{{ _('Enter your email address') }}" required
+                                        autocomplete="username">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="page-card-actions">
+
+                            <button class="btn btn-primary btn-forgot" type="submit">
+
+                                {{ _("Reset Password") }}
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="auth-back-link">
+
+                        <a href="#login">
+                            {{ _("Back to Login") }}
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+				     EMAIL LINK LOGIN
+				================================================== -->
+
+                <section class="for-login-with-email-link">
+
+                    {{ auth_heading(
+                    "Login with Email Link",
+                    "We will send a secure login link to your email"
+                    ) }}
+
+
+                    <form class="form-signin form-login-with-email-link" role="form">
+
+                        <div class="page-card-body">
+
+                            <div class="form-group">
+
+                                <label class="field-label" for="login_with_email_link_email">
+
+                                    {{ _("Email Address") }}
+
+                                </label>
+
+
+                                <div class="email-field input-container">
+
+                                    <span class="input-icon">
+
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                                            <path d="M4 4h16v16H4z"></path>
+                                            <path d="M4 6l8 6 8-6"></path>
+
+                                        </svg>
+
+                                    </span>
+
+
+                                    <input type="email" id="login_with_email_link_email" class="form-control"
+                                        placeholder="{{ _('Enter your email address') }}" required
+                                        autocomplete="username">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="page-card-actions">
+
+                            <button class="btn btn-primary btn-login-with-email-link" type="submit">
+
+                                {{ _("Send Login Link") }}
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="auth-back-link">
+
+                        <a href="#login">
+                            {{ _("Back to Login") }}
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script>
+    {% include "templates/includes/login/login.js" %}
+</script>
+
+{% endblock %}
+
+
+{% block sidebar %}
+{% endblock %}
