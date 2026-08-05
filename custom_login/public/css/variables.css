@@ -1,0 +1,186 @@
+/* ==========================================
+   MORPHOSIS ERPNext Theme Variables
+   Brand Color: #080226
+========================================== */
+
+:root{
+
+    /* Primary Colors */
+    --primary:#080226;
+    --primary-hover:#14063d;
+    --primary-light:#22105b;
+
+    /* Background */
+    --bg:#080226;
+    --bg-secondary:#12063d;
+    --bg-tertiary:#1b0b52;
+    --bg-card:#160844;
+
+    /* Borders */
+    --border:#32206d;
+    --border-light:#43308d;
+
+    /* Text */
+    --text:#ffffff;
+    --text-light:#d6d6e8;
+    --text-muted:#bcbcd4;
+
+    /* Links */
+    --link:#ffffff;
+    --link-hover:#bba8ff;
+
+    /* Success */
+    --success:#28c76f;
+
+    /* Warning */
+    --warning:#ffb547;
+
+    /* Danger */
+    --danger:#ff5b6b;
+
+    /* Scroll */
+    --scroll:#5440a9;
+
+    /* Radius */
+    --radius:14px;
+
+    /* Shadow */
+    --shadow:
+        0 12px 30px rgba(0,0,0,.35);
+
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+html,
+body{
+
+    background:var(--bg)!important;
+    color:var(--text)!important;
+
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a{
+
+    color:var(--link)!important;
+
+}
+
+a:hover{
+
+    color:var(--link-hover)!important;
+
+}
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:#fff!important;
+
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.text-muted{
+
+    color:var(--text-muted)!important;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn-primary{
+
+    background:#fff!important;
+    color:#080226!important;
+    border:none!important;
+
+}
+
+.btn-primary:hover{
+
+    background:#ececec!important;
+
+}
+
+.btn-default,
+.btn-secondary{
+
+    background:var(--bg-secondary)!important;
+    color:#fff!important;
+    border:1px solid var(--border)!important;
+
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-control{
+
+    background:var(--bg-secondary)!important;
+    border:1px solid var(--border)!important;
+    color:#fff!important;
+
+}
+
+.form-control::placeholder{
+
+    color:#bcbcd4!important;
+
+}
+
+.form-control:focus{
+
+    border-color:#fff!important;
+    box-shadow:0 0 0 3px rgba(255,255,255,.12)!important;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b0328;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#5642a5;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6f59d3;
+
+}

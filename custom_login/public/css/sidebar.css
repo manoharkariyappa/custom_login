@@ -1,0 +1,202 @@
+/* =====================================================
+   MORPHOSIS SIDEBAR
+===================================================== */
+
+/* Sidebar Container */
+
+.layout-side-section,
+.standard-sidebar,
+.desk-sidebar,
+.sidebar,
+.layout-side-section .sidebar-menu {
+
+    background: #080226 !important;
+    border-right: 1px solid #24145c !important;
+}
+
+/* Sidebar Width */
+
+.layout-side-section {
+    width: 250px !important;
+}
+
+/* All Sidebar Text */
+
+.layout-side-section *,
+.standard-sidebar *,
+.sidebar * {
+
+    color: #ffffff !important;
+}
+
+/* Workspace Title */
+
+.standard-sidebar .workspace-label,
+.sidebar-label {
+
+    color: #ffffff !important;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+/* Sidebar Items */
+
+.standard-sidebar-item,
+.sidebar-item,
+.tree-link {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 4px 10px;
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    transition: .25s;
+}
+
+/* Hover */
+
+.standard-sidebar-item:hover,
+.sidebar-item:hover,
+.tree-link:hover {
+
+    background: #14063d !important;
+}
+
+/* Selected */
+
+.standard-sidebar-item.selected,
+.sidebar-item.selected {
+
+    background: #1c0a55 !important;
+
+    border-left: 4px solid #ffffff;
+
+    color: #ffffff !important;
+}
+
+/* Icons */
+
+.standard-sidebar-item svg,
+.sidebar-item svg,
+.tree-link svg {
+
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+}
+
+/* Workspace Icon */
+
+.workspace-icon {
+
+    color: #ffffff !important;
+}
+
+/* Module Name */
+
+.sidebar-item-label {
+
+    color: #ffffff !important;
+}
+
+/* Divider */
+
+.sidebar-section {
+
+    border-top: 1px solid #24145c !important;
+
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+/* Badge */
+
+.sidebar-item .badge {
+
+    background: #5642a5 !important;
+
+    color: #ffffff !important;
+}
+
+/* User Section */
+
+.sidebar-user,
+.user-profile {
+
+    border-top: 1px solid #24145c !important;
+
+    background: #080226 !important;
+}
+
+/* Avatar */
+
+.sidebar-user .avatar {
+
+    background: #32206d !important;
+
+    color: white !important;
+}
+
+/* Search */
+
+.sidebar-search input {
+
+    background: #14063d !important;
+
+    border: 1px solid #32206d !important;
+
+    color: white !important;
+
+    border-radius: 10px;
+}
+
+.sidebar-search input::placeholder {
+
+    color: #bcbcd4 !important;
+}
+
+/* Collapse */
+
+.sidebar-toggle {
+
+    color: #ffffff !important;
+}
+
+/* Scrollbar */
+
+.layout-side-section::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+.layout-side-section::-webkit-scrollbar-thumb {
+
+    background: #4d3d96;
+
+    border-radius: 10px;
+}
+
+/* Footer */
+
+.sidebar-footer {
+
+    background: #080226 !important;
+
+    color: white !important;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.layout-side-section{
+
+    background:#080226 !important;
+
+}
+
+}
