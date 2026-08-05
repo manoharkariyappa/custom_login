@@ -6,6 +6,7 @@ app_email = "manohar.kariyappa@gmail.com"
 app_license = "mit"
 
 after_install = "custom_login.custom_login.install.after_install"
+app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps
 # ------------------
 

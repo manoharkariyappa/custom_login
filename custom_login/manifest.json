@@ -1,0 +1,45 @@
+{
+"name": "ERP Dentoze Hub",
+"short_name": "erpbentoze",
+"id": "/?source=pwa",
+"start_url": "/?source=pwa",
+"scope": "/",
+"display": "standalone",
+"display_override": ["standalone", "minimal-ui"],
+"background_color": "#FAF0E6",
+"theme_color": "#2f2f68",
+"description": "ERP Dentoze Hub",
+"categories": ["business", "ERP Dentoze Hub"],
+"dir": "auto",
+"lang": "en",
+"orientation": "portrait",
+"prefer_related_applications": false,
+
+"related_applications": [
+{
+"platform": "webapp",
+"url": "https://erp.dentozehub.com/"
+}
+],
+
+"icons": [
+{
+"src": "/files/morphosis-logo.png",
+"sizes": "192x192",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "/files/morphosis-logo.png",
+"sizes": "512x512",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "/files/morphosis-logo.png",
+"sizes": "512x512",
+"type": "image/png",
+"purpose": "maskable"
+}
+]
+}

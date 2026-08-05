@@ -1,0 +1,171 @@
+/* ===========================================
+   MORPHOSIS DARK THEME
+   Primary Color : #080226
+===========================================*/
+
+:root{
+    --primary:#080226;
+    --primary-light:#14063d;
+    --primary-hover:#1f0b56;
+    --text:#ffffff;
+    --border:#24145c;
+}
+
+/* Background */
+
+body,
+.layout-main-section,
+.layout-main,
+.desk-container,
+.page-container,
+.page-body,
+.page-head,
+.page-content,
+.std-form-layout,
+.page-card,
+.widget,
+.widget-group,
+.workspace-body{
+    background:#080226 !important;
+    color:#ffffff !important;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#080226 !important;
+    border-bottom:1px solid #24145c !important;
+}
+
+.navbar *{
+    color:#fff !important;
+}
+
+/* Search */
+
+.search-bar input,
+.awesomplete input{
+    background:#12063d !important;
+    color:#fff !important;
+    border:1px solid #2d1c72 !important;
+}
+
+.search-bar input::placeholder{
+    color:#d8d8d8;
+}
+
+/* Sidebar */
+
+.layout-side-section,
+.standard-sidebar,
+.desk-sidebar,
+.sidebar{
+    background:#080226 !important;
+}
+
+.layout-side-section *{
+    color:#ffffff !important;
+}
+
+.standard-sidebar-item:hover{
+    background:#1d104e !important;
+}
+
+.standard-sidebar-item.selected{
+    background:#29186e !important;
+}
+
+/* Workspace cards */
+
+.widget,
+.shortcut-widget-box,
+.workspace-card,
+.workspace-item{
+    background:#14063d !important;
+    border:1px solid #2f2076 !important;
+    color:#ffffff !important;
+    border-radius:14px;
+}
+
+.widget:hover,
+.workspace-card:hover{
+    background:#1d1051 !important;
+}
+
+/* Module Icons */
+
+.icon,
+.avatar{
+    color:#ffffff !important;
+}
+
+/* Buttons */
+
+.btn-primary{
+    background:#ffffff !important;
+    color:#080226 !important;
+    border:none !important;
+}
+
+.btn-primary:hover{
+    background:#dddddd !important;
+}
+
+/* Inputs */
+
+.form-control{
+    background:#14063d !important;
+    color:#ffffff !important;
+    border:1px solid #2f2076 !important;
+}
+
+.form-control:focus{
+    border-color:#ffffff !important;
+    box-shadow:0 0 0 3px rgba(255,255,255,.15)!important;
+}
+
+/* Tables */
+
+.list-row,
+.grid-row{
+    background:#080226 !important;
+    color:#ffffff !important;
+    border-color:#22125c !important;
+}
+
+.list-row:hover{
+    background:#160845 !important;
+}
+
+/* Dropdown */
+
+.dropdown-menu{
+    background:#12063d !important;
+}
+
+.dropdown-item{
+    color:#fff !important;
+}
+
+.dropdown-item:hover{
+    background:#24145c !important;
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5,h6,
+.label,
+.text-muted,
+.small{
+    color:#ffffff !important;
+}
+
+/* Links */
+
+a{
+    color:#ffffff !important;
+}
+
+a:hover{
+    color:#d0d0ff !important;
+}
