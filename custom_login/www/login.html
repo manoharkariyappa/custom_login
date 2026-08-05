@@ -64,7 +64,9 @@
         box-shadow: 0 30px 80px rgba(30, 41, 59, 0.15);
     }
 
-
+    /* ============================================================
+	   LEFT PANEL
+	============================================================ */
 
     .login-left {
         position: relative;
@@ -112,8 +114,8 @@
     }
 
     .brand img {
-        width: 200px;
-        height: 150px;
+        width: 150px;
+        height: 75px;
         object-fit: contain;
         background: #ffffff;
         border-radius: 12px;
@@ -760,7 +762,7 @@
             </div>
 
 
-            <!-- <div class="welcome-content">
+            <div class="welcome-content">
 
                 <h1>
                     {{ _("Welcome Back!") }}
@@ -770,10 +772,10 @@
                     {{ _("Sign in to continue your journey and access everything you need in one place.") }}
                 </p>
 
-            </div> -->
+            </div>
 
 
-            <!-- <div class="feature-card">
+            <div class="feature-card">
 
                 <div class="feature-icon">
 
@@ -794,7 +796,7 @@
                     {{ _("Manage your work, collaborate with your team and stay productive.") }}
                 </p>
 
-            </div> -->
+            </div>
 
 
             <div class="dots dots-bottom">
@@ -823,9 +825,9 @@
                 <div class="mobile-logo">
 
                     {% if logo %}
-                    <img src="{{ logo }}" alt="">
+                    <img src="{{ logo }}" alt="{{ app_name or _('Chromed Bioscience') }}">
                     {% endif %}
-<!-- {{ app_name or _('Chromed Bioscience') }} -->
+
                 </div>
 
 
