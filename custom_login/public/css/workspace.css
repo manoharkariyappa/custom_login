@@ -1,36 +1,40 @@
-/* ==========================================
-   DESK ONLY (Home Page)
-========================================== */
 
-/* Only when URL is /desk */
+/* Only Home (/desk) */
+body[data-route=""] .layout-main-section,
+body[data-route=""] .desk-container,
 body[data-route=""] .workspace-page,
 body[data-route=""] .workspace-body,
-body[data-route=""] .desktop-page,
-body[data-route=""] .layout-main-section,
 
+body[data-route="desk"] .layout-main-section,
+body[data-route="desk"] .desk-container,
 body[data-route="desk"] .workspace-page,
-body[data-route="desk"] .workspace-body,
-body[data-route="desk"] .desktop-page,
-body[data-route="desk"] .layout-main-section{
+body[data-route="desk"] .workspace-body{
 
     background:#080226 !important;
-
+    min-height:calc(100vh - 58px) !important;
 }
 
-/* Only Desk shortcuts */
+/* Make all children transparent */
+body[data-route=""] .layout-main-section > *,
+body[data-route="desk"] .layout-main-section > *{
+
+    background:transparent !important;
+}
+
+/* Workspace app names */
+body[data-route=""] .shortcut-label,
+body[data-route="desk"] .shortcut-label,
+body[data-route=""] .widget-label,
+body[data-route="desk"] .widget-label{
+
+    color:#ffffff !important;
+}
+
+/* App cards */
 body[data-route=""] .shortcut-widget-box,
 body[data-route="desk"] .shortcut-widget-box{
 
     background:transparent !important;
     border:none !important;
     box-shadow:none !important;
-
-}
-
-/* Desk app names */
-body[data-route=""] .shortcut-label,
-body[data-route="desk"] .shortcut-label{
-
-    color:#ffffff !important;
-
 }
