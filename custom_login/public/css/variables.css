@@ -3,60 +3,12 @@
    Brand Color: #080226
 ========================================== */
 
+/*  */
+
 :root{
-
-	--surface-menu-bar: #080226 !important;
-    --sidebar-border-color: #32206d !important;
-    --surface-ground: #080226 !important;
-    --surface-bg: #080226 !important;
-
-
-    /* Primary Colors */
-    --primary:#080226;
-    --primary-hover:#14063d;
-    --primary-light:#22105b;
-
-    /* Background */
-    --bg:#080226;
-    --bg-secondary:#12063d;
-    --bg-tertiary:#1b0b52;
-    --bg-card:#160844;
-
-    /* Borders */
-    --border:#32206d;
-    --border-light:#43308d;
-
-    /* Text */
-    --text:#ffffff;
-    --text-light:#d6d6e8;
-    --text-muted:#bcbcd4;
-
-    /* Links */
-    --link:#ffffff;
-    --link-hover:#bba8ff;
-
-    /* Success */
-    --success:#28c76f;
-
-    /* Warning */
-    --warning:#ffb547;
-
-    /* Danger */
-    --danger:#ff5b6b;
-
-    /* Scroll */
-    --scroll:#5440a9;
-
-    /* Radius */
-    --radius:14px;
-
-    /* Shadow */
-    --shadow:
-        0 12px 30px rgba(0,0,0,.35);
-
+    --surface-menu-bar:#080226 !important;
+    --sidebar-border-color:#32206d !important;
 }
-
-
 html,
 body{
 
