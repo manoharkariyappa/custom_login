@@ -1,9 +1,3 @@
-/* ===========================================================
-   MORPHOSIS ERPNext v16 Theme
-   Brand: #080226
-   Place in:
-   custom_login/public/css/morphosis_theme.css
-=========================================================== */
 
 :root{
   --m-bg:#080226;
@@ -27,7 +21,7 @@ body *{
 }
 
 /* NAVBAR */
-.navbar,
+/* .navbar,
 header,
 .page-head{
   background:var(--m-bg)!important;
@@ -37,7 +31,7 @@ header,
 .navbar *,
 .page-head *{
   color:#fff!important;
-}
+} */
 
 /* SEARCH */
 .search-bar input,
@@ -85,17 +79,17 @@ header,
 }
 
 /* MAIN */
-.layout-main-section,
+/* .layout-main-section,
 .layout-main,
 .page-container,
 .page-body,
 .workspace-body,
 .workspace{
   background:var(--m-bg)!important;
-}
+} */
 
 /* CARDS */
-.widget,
+/* .widget,
 .workspace-card,
 .shortcut-widget-box,
 .page-card,
@@ -108,7 +102,7 @@ header,
   border:1px solid var(--m-border)!important;
   color:#fff!important;
   border-radius:14px!important;
-}
+} */
 
 .widget:hover,
 .workspace-card:hover,
@@ -116,7 +110,7 @@ header,
   background:var(--m-hover)!important;
 }
 
-/* TABLES */
+/* TABLES
 .list-row,
 .dt-row,
 .grid-row,
@@ -125,49 +119,49 @@ header,
   background:var(--m-surface)!important;
   color:#fff!important;
   border-color:var(--m-border)!important;
-}
+} */
 
 .list-row:nth-child(even){
   background:#17084a!important;
 }
 
-.list-row:hover,
+/* .list-row:hover,
 .grid-row:hover{
   background:var(--m-hover)!important;
-}
+} */
 
 /* TABLE HEADER */
-.list-row-head,
+/* .list-row-head,
 .dt-header,
 .grid-heading-row{
   background:var(--m-bg)!important;
   color:#fff!important;
-}
+} */
 
 /* FORMS */
-.form-page,
+/* .form-page,
 .form-layout,
 .form-section,
-.section-body{
+.section-body{2
   background:var(--m-bg)!important;
   color:#fff!important;
-}
-
+} */
+/*
 .control-label,
 label,
 .text-muted,
 .small{
   color:#fff!important;
-}
+} */
 
-/* BUTTONS */
+/* BUTTONS
 .btn-primary{
   background:#fff!important;
   color:#080226!important;
   border:none!important;
-}
+} */
 
-.btn-primary:hover{
+/* .btn-primary:hover{
   background:#ececec!important;
 }
 
@@ -176,7 +170,7 @@ label,
   background:var(--m-surface)!important;
   color:#fff!important;
   border:1px solid var(--m-border)!important;
-}
+} */
 
 /* DROPDOWNS */
 .dropdown-menu{
@@ -265,15 +259,15 @@ svg,
   background:var(--m-surface)!important;
   color:#fff!important;
 }
+/* */
 
 /* REPORTS */
-.report-wrapper,
+/* .report-wrapper,
 .chart-wrapper{
   background:var(--m-surface)!important;
   border:1px solid var(--m-border)!important;
 }
-
-/* KANBAN */
+KANBAN */
 .kanban-column{
   background:var(--m-surface)!important;
 }
