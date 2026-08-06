@@ -118,7 +118,7 @@
         height: 75px;
         object-fit: contain;
         background: #ffffff;
-        border-radius: 12px;
+        /* border-radius: 12px; */
         padding: 7px;
         box-sizing: border-box;
     }
@@ -752,11 +752,11 @@
             <div class="brand">
 
                 {% if logo %}
-                <img src="{{ logo }}" alt="{{ app_name or _('Chromed Bioscience') }}">
+                <img src="{{ logo }}" alt="">
                 {% endif %}
 
                 <span>
-                    {{ app_name or _("Chromed Bioscience") }}
+                    <!-- {{ app_name or _("Chromed Bioscience") }} -->
                 </span>
 
             </div>
@@ -768,9 +768,9 @@
                     {{ _("Welcome Back!") }}
                 </h1>
 
-                <p>
+                <!-- <p>
                     {{ _("Sign in to continue your journey and access everything you need in one place.") }}
-                </p>
+                </p> -->
 
             </div>
 
@@ -788,13 +788,13 @@
 
                 </div>
 
-                <h3>
+                <!-- <h3>
                     {{ _("Everything in one place") }}
                 </h3>
 
                 <p>
                     {{ _("Manage your work, collaborate with your team and stay productive.") }}
-                </p>
+                </p> -->
 
             </div>
 
