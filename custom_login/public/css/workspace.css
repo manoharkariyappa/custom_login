@@ -1,5 +1,16 @@
 
 /* Only Home (/desk) */
+
+/* Fill remaining white area */
+
+body[data-route="desk"] #body,
+body[data-route="desk"] .page-container,
+body[data-route="desk"] .page-content,
+body[data-route="desk"] .content,
+body[data-route="desk"] .page-body{
+
+    background:#080226 !important;
+}
 body[data-route=""] .layout-main-section,
 body[data-route=""] .desk-container,
 body[data-route=""] .workspace-page,
