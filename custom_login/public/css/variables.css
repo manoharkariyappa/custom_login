@@ -5,6 +5,12 @@
 
 :root{
 
+	--surface-menu-bar: #080226 !important;
+    --sidebar-border-color: #32206d !important;
+    --surface-ground: #080226 !important;
+    --surface-bg: #080226 !important;
+
+
     /* Primary Colors */
     --primary:#080226;
     --primary-hover:#14063d;

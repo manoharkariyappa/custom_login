@@ -7,7 +7,7 @@ app_license = "mit"
 
 after_install = "custom_login.custom_login.install.after_install"
 app_include_css = [
-    # "/assets/custom_login/css/variables.css",
+    "/assets/custom_login/css/variables.css",
     # "/assets/custom_login/css/navbar.css",
       "/assets/custom_login/css/sidebar.css",
       "/assets/custom_login/css/morphosis_theme.css",
@@ -22,7 +22,7 @@ app_include_css = [
     # "/assets/custom_login/css/dashboard.css",
     # "/assets/custom_login/css/charts.css",
     # "/assets/custom_login/css/misc.css",
-    # "/assets/custom_login/css/erpnext_overrides.css",
+    "/assets/custom_login/css/erpnext_overrides.css",
 ]
 # app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps
