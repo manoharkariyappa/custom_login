@@ -22,7 +22,7 @@ app_include_css = [
     # "/assets/custom_login/css/dashboard.css",
     # "/assets/custom_login/css/charts.css",
     # "/assets/custom_login/css/misc.css",
-    "/assets/custom_login/css/erpnext_overrides.css",
+    # "/assets/custom_login/css/erpnext_overrides.css",
 ]
 # app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps
