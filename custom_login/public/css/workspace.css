@@ -1,238 +1,41 @@
-/* ======================================================
-   MORPHOSIS WORKSPACE
-   Brand: #080226
-====================================================== */
-
-/* Workspace */
-
-.workspace,
-.workspace-body,
-.workspace-container,
-.desk-page,
-.page-container {
+body[data-route="Workspaces"],
+body[data-route="desk"] {
 
     background: #080226 !important;
-}
-
-/* Module Container */
-
-.workspace-body {
-
-    padding: 30px !important;
-}
-
-/* Module Grid */
-
-.widget-group,
-.widget-group-body {
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-
-/* ==========================================
-   MODULE CARD
-========================================== */
-
-.widget.shortcut-widget-box,
-.shortcut-widget-box,
-.workspace-card {
-
-    width: 165px;
-    height: 165px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background: linear-gradient(
-        180deg,
-        #14063d 0%,
-        #1a0b55 100%
-    ) !important;
-
-    border: 1px solid #32206d !important;
-
-    border-radius: 20px !important;
-
-    transition: .3s;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.35);
 
 }
 
-/* Hover */
+/* Workspace content */
+body[data-route="Workspaces"] .layout-main-section,
+body[data-route="Workspaces"] .page-container,
+body[data-route="Workspaces"] .desk-container,
+body[data-route="Workspaces"] .workspace-page,
+body[data-route="Workspaces"] .workspace-body,
 
-.widget.shortcut-widget-box:hover,
-.shortcut-widget-box:hover,
-.workspace-card:hover{
+body[data-route="desk"] .layout-main-section,
+body[data-route="desk"] .page-container,
+body[data-route="desk"] .desk-container,
+body[data-route="desk"] .workspace-page,
+body[data-route="desk"] .workspace-body {
 
-    transform: translateY(-8px);
-
-    background: linear-gradient(
-        180deg,
-        #1d0f58,
-        #28196c
-    ) !important;
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.45);
+    background: #080226 !important;
 
 }
 
-/* ==========================================
-   ICON
-========================================== */
+/* Keep app icons transparent */
+body[data-route="Workspaces"] .shortcut-widget-box,
+body[data-route="desk"] .shortcut-widget-box {
 
-.shortcut-widget-box svg,
-.shortcut-widget-box .icon,
-.workspace-card svg{
-
-    width:42px !important;
-    height:42px !important;
-
-    color:#ffffff !important;
-    stroke:#ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 
 }
 
-/* ==========================================
-   TITLE
-========================================== */
+/* App names */
+body[data-route="Workspaces"] .shortcut-label,
+body[data-route="desk"] .shortcut-label {
 
-.shortcut-widget-box .widget-label,
-.shortcut-widget-box .title,
-.workspace-card .title{
-
-    color:#ffffff !important;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    margin-top:15px;
-
-    text-align:center;
-
-}
-
-/* Description */
-
-.widget-description{
-
-    color:#d7d7e8 !important;
-
-}
-
-/* ==========================================
-   SECTION TITLE
-========================================== */
-
-.workspace-section-title{
-
-    color:#ffffff !important;
-
-    font-size:24px;
-
-    font-weight:700;
-
-    margin-bottom:25px;
-
-}
-
-/* ==========================================
-   ADD BUTTON
-========================================== */
-
-.workspace-action button{
-
-    background:#ffffff !important;
-
-    color:#080226 !important;
-
-    border:none !important;
-
-    border-radius:12px;
-
-}
-
-/* ==========================================
-   FAVORITES
-========================================== */
-
-.favorite-section{
-
-    background:#14063d !important;
-
-    border-radius:16px;
-
-}
-
-/* ==========================================
-   CHART
-========================================== */
-
-.chart-container{
-
-    background:#14063d !important;
-
-    border-radius:16px;
-
-    border:1px solid #32206d !important;
-
-}
-
-/* ==========================================
-   NUMBER CARD
-========================================== */
-
-.number-card{
-
-    background:#14063d !important;
-
-    border:1px solid #32206d !important;
-
-    border-radius:16px;
-
-}
-
-.number-card *{
-
-    color:#ffffff !important;
-
-}
-
-/* ==========================================
-   QUICK LIST
-========================================== */
-
-.quick-list-item{
-
-    background:#14063d !important;
-
-    border-bottom:1px solid #32206d !important;
-
-}
-
-.quick-list-item:hover{
-
-    background:#21115e !important;
-
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:768px){
-
-.shortcut-widget-box{
-
-    width:100%;
-
-}
+    color: #ffffff !important;
 
 }
