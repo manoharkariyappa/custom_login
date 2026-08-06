@@ -365,3 +365,62 @@ svg{
     border:1px solid #32206d !important;
 
 }
+
+/* ==========================================================
+   PROFILE MENU / USER DROPDOWN
+========================================================== */
+
+.dropdown-menu,
+.dropdown-menu-right,
+.dropdown-menu-end,
+.user-dropdown,
+.user-menu,
+.navbar-dropdown,
+.popover,
+.popover-body,
+.popover-content{
+
+    background:#080226 !important;
+    border:1px solid #32206d !important;
+    color:#ffffff !important;
+    border-radius:16px !important;
+    box-shadow:0 15px 40px rgba(0,0,0,.35) !important;
+
+}
+
+/* Menu Items */
+
+.dropdown-item,
+.dropdown-menu a,
+.dropdown-menu button{
+
+    color:#ffffff !important;
+    background:transparent !important;
+
+}
+
+.dropdown-item:hover,
+.dropdown-menu a:hover,
+.dropdown-menu button:hover{
+
+    background:#241062 !important;
+    color:#ffffff !important;
+
+}
+
+/* Icons */
+
+.dropdown-menu svg,
+.dropdown-menu .icon{
+
+    color:#ffffff !important;
+    stroke:#ffffff !important;
+
+}
+
+
+.dropdown-divider{
+
+    border-color:#32206d !important;
+
+}
