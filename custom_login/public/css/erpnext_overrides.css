@@ -365,3 +365,123 @@ svg{
     border:1px solid #32206d !important;
 
 }
+/* ==========================================================
+   MORPHOSIS SIDEBAR BUTTONS
+========================================================== */
+
+/* Sidebar Button */
+
+.body-sidebar .standard-sidebar-item,
+.body-sidebar .sidebar-item,
+.body-sidebar .sidebar-item a,
+.body-sidebar .item-anchor{
+
+    background: transparent !important;
+    color: #ffffff !important;
+
+    border-radius: 12px;
+
+    margin: 4px 8px;
+
+    padding: 10px 14px;
+
+    transition: .25s ease;
+
+}
+
+/* Hover */
+
+.body-sidebar .standard-sidebar-item:hover,
+.body-sidebar .sidebar-item:hover,
+.body-sidebar .sidebar-item a:hover,
+.body-sidebar .item-anchor:hover{
+
+    background: #14063d !important;
+
+    color: white !important;
+
+}
+
+/* Active */
+
+.body-sidebar .selected,
+.body-sidebar .active,
+.body-sidebar .standard-sidebar-item.selected,
+.body-sidebar .sidebar-item.selected{
+
+    background: #2b1b70 !important;
+
+    color: white !important;
+
+    border-left: 4px solid white !important;
+
+}
+
+/* Icons */
+
+.body-sidebar .sidebar-item svg,
+.body-sidebar .standard-sidebar-item svg{
+
+    stroke: white !important;
+    color: white !important;
+
+}
+
+/* Button Text */
+
+.body-sidebar .sidebar-item span,
+.body-sidebar .standard-sidebar-item span{
+
+    color: white !important;
+
+}
+
+/* Expand Arrow */
+
+.body-sidebar .sidebar-item .icon,
+.body-sidebar .standard-sidebar-item .icon{
+
+    color: white !important;
+
+}
+.body-sidebar::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.body-sidebar::-webkit-scrollbar-thumb{
+
+    background:#5642a5;
+
+    border-radius:20px;
+
+}
+/* ==========================================================
+   SIDEBAR SEARCH PANEL
+========================================================== */
+
+.body-sidebar .search-container,
+.body-sidebar .search-box,
+.body-sidebar .search-input,
+.body-sidebar .search-field,
+.body-sidebar .search-wrapper,
+.body-sidebar .sidebar-search,
+.body-sidebar .form-control,
+.body-sidebar input[type="text"] {
+
+    background: #080226 !important;
+    border: 1px solid #32206d !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.body-sidebar input::placeholder{
+    color: #bcbcd4 !important;
+}
+
+.body-sidebar .search-icon,
+.body-sidebar svg{
+    stroke: #ffffff !important;
+    color: #ffffff !important;
+}
