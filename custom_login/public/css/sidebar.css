@@ -1,88 +1,75 @@
 /* ==========================================
-   MORPHOSIS SIDEBAR - ERPNext v16
+   MORPHOSIS SIDEBAR
 ========================================== */
 
-/* Left Sidebar */
-.layout-side-section,
-.layout-side-section .sidebar-menu,
-.standard-sidebar,
-.standard-sidebar-section,
-.standard-sidebar-item-container,
-.desk-sidebar,
-.desk-sidebar-section {
-
-    background: #080226 !important;
+.body-sidebar{
+    background:#080226 !important;
+    border-right:1px solid #32206d !important;
 }
 
-/* Sidebar Content */
-.layout-side-section *{
+.body-sidebar *{
     color:#ffffff !important;
 }
 
-/* Sidebar Items */
-.standard-sidebar-item,
-.sidebar-item-container a,
-.tree-link,
-.workspace-sidebar-item{
+.body-sidebar .standard-sidebar-item,
+.body-sidebar .sidebar-item,
+.body-sidebar .tree-link{
 
-    background: transparent !important;
+    background:transparent !important;
+
     color:#ffffff !important;
 
     border-radius:12px;
 
     margin:4px 8px;
 
+    transition:.2s;
+
 }
 
-/* Hover */
-
-.standard-sidebar-item:hover,
-.sidebar-item-container a:hover,
-.tree-link:hover{
+.body-sidebar .standard-sidebar-item:hover,
+.body-sidebar .sidebar-item:hover,
+.body-sidebar .tree-link:hover{
 
     background:#1b0b52 !important;
 
 }
 
-/* Active */
-
-.standard-sidebar-item.selected,
-.sidebar-item-container.selected,
-.standard-sidebar-item.active{
+.body-sidebar .standard-sidebar-item.selected,
+.body-sidebar .standard-sidebar-item.active{
 
     background:#241062 !important;
 
-    border-left:4px solid #ffffff;
+    border-left:4px solid white;
 
 }
 
-/* Search */
-
-.layout-side-section input{
+.body-sidebar input{
 
     background:#160844 !important;
 
+    color:white !important;
+
     border:1px solid #32206d !important;
 
-    color:white !important;
-
 }
 
-/* User Area */
-
-.sidebar-user,
-.user-info{
+.body-sidebar .sidebar-user{
 
     background:#080226 !important;
 
 }
 
-/* Collapse Button */
+.body-sidebar::-webkit-scrollbar{
 
-.sidebar-toggle{
+    width:8px;
 
-    background:#080226 !important;
+}
 
-    color:white !important;
+.body-sidebar::-webkit-scrollbar-thumb{
+
+    background:#5642a5;
+
+    border-radius:20px;
 
 }
