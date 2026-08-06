@@ -49,19 +49,25 @@
         background:
             radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.12), transparent 30%),
             radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08), transparent 30%),
-            #f5f7ff;
+            linear-gradient(135deg,#eceef7,#dfe7ff);
     }
 
     .login-container {
-        width: 100%;
-        max-width: 1180px;
-        min-height: 720px;
-        display: grid;
-        grid-template-columns: 43% 57%;
-        background: #ffffff;
-        border-radius: 28px;
-        overflow: hidden;
-        box-shadow: 0 30px 80px rgba(30, 41, 59, 0.15);
+        width:100%;
+        max-width:1450px;
+        min-height:760px;
+
+        display:grid;
+        grid-template-columns:48% 52%;
+
+        background:#fff;
+
+        border-radius:28px;
+
+        overflow:hidden;
+
+        box-shadow:
+        0 30px 70px rgba(0,0,0,.18);
     }
 
     /* ============================================================
@@ -69,16 +75,19 @@
 	============================================================ */
 
     .login-left {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-        color: #ffffff;
-        overflow: hidden;
-        background: linear-gradient(145deg,
-                #080226 0%,
-                #080226 45%,
-                #080226 100%);
+        background:#080226;
+
+        padding:60px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        position:relative;
     }
 
     .login-left::before {
@@ -104,89 +113,90 @@
     }
 
     .brand {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        font-size: 21px;
-        font-weight: 700;
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        width:100%;
+
+        margin-bottom:60px;
     }
 
     .brand img {
-        width: 150px;
-        height: 75px;
-        object-fit: contain;
-        background: #ffffff;
-        /* border-radius: 12px; */
-        padding: 7px;
-        box-sizing: border-box;
+        width:340px;
+
+        height:auto;
+
+        background:white;
+
+        padding:18px;
+
+        border-radius:18px;
+
+        box-shadow:
+
+        0 15px 35px rgba(0,0,0,.25);
     }
 
-    .welcome-content {
-        position: relative;
-        z-index: 2;
-        margin-top: 125px;
-    }
+    .welcome-content{
 
-    .welcome-content h1 {
-        color: #ffffff;
-        font-size: 44px;
-        font-weight: 750;
-        letter-spacing: -1.5px;
-        margin: 0 0 15px;
-    }
+    text-align:center;
 
-    .welcome-content p {
-        max-width: 360px;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 17px;
-        line-height: 1.7;
-        margin: 0;
-    }
+    margin-top:0;
 
-    .feature-card {
-        position: relative;
-        z-index: 2;
-        margin-top: auto;
-        padding: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.11);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-    }
+}
 
-    .feature-icon {
-        width: 52px;
-        height: 52px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-        border-radius: 15px;
-        background: rgba(255, 255, 255, 0.17);
-    }
+.welcome-content h1{
 
-    .feature-icon svg {
-        width: 26px;
-        height: 26px;
-    }
+    font-size:48px;
 
-    .feature-card h3 {
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 650;
-        margin: 0 0 8px;
-    }
+    margin-bottom:18px;
 
-    .feature-card p {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 14px;
-        line-height: 1.6;
-        margin: 0;
-    }
+    font-weight:700;
 
+}
+
+.welcome-content p{
+
+    max-width:420px;
+
+    font-size:18px;
+
+    color:rgba(255,255,255,.82);
+
+    line-height:1.8;
+
+    margin:auto;
+
+}
+
+.company-footer{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.company-footer h3{
+
+    font-size:26px;
+
+    margin-bottom:10px;
+
+}
+
+.company-footer p{
+
+    color:rgba(255,255,255,.75);
+
+    font-size:17px;
+
+}
     /* Decorative dots */
 
     .dots {
@@ -229,7 +239,7 @@
 
     .auth-wrapper {
         width: 100%;
-        max-width: 460px;
+        max-width: 500px;
     }
 
     .mobile-logo {
@@ -536,7 +546,7 @@
         }
 
         .login-right {
-            padding: 50px;
+            padding: 70px;
         }
     }
 
@@ -775,28 +785,13 @@
             </div>
 
 
-            <div class="feature-card">
+            <div class="company-footer">
 
-                <div class="feature-icon">
+    <h3>Morphosis Technologies</h3>
 
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+    <p>Transformation Meets Excellence</p>
 
-                        <path d="M20 6L9 17l-5-5"></path>
-
-                    </svg>
-
-                </div>
-
-                <!-- <h3>
-                    {{ _("Everything in one place") }}
-                </h3>
-
-                <p>
-                    {{ _("Manage your work, collaborate with your team and stay productive.") }}
-                </p> -->
-
-            </div>
+</div>
 
 
             <div class="dots dots-bottom">
