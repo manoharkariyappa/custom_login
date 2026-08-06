@@ -6,24 +6,25 @@ app_email = "manohar.kariyappa@gmail.com"
 app_license = "mit"
 
 after_install = "custom_login.custom_login.install.after_install"
-# app_include_css = [
-#     "/assets/custom_login/css/variables.css",
-#     "/assets/custom_login/css/navbar.css",
-#     "/assets/custom_login/css/sidebar.css",
-#     "/assets/custom_login/css/workspace.css",
-#     "/assets/custom_login/css/listview.css",
-#     "/assets/custom_login/css/form.css",
-#     "/assets/custom_login/css/datatable.css",
-#     "/assets/custom_login/css/dialogs.css",
-#     "/assets/custom_login/css/reports.css",
-#     "/assets/custom_login/css/calendar.css",
-#     "/assets/custom_login/css/kanban.css",
-#     "/assets/custom_login/css/dashboard.css",
-#     "/assets/custom_login/css/charts.css",
-#     "/assets/custom_login/css/misc.css",
-#     "/assets/custom_login/css/erpnext_overrides.css",
-# ]
-app_include_css = "/assets/custom_login/css/morphosis_theme.css"
+app_include_css = [
+    # "/assets/custom_login/css/variables.css",
+    # "/assets/custom_login/css/navbar.css",
+      "/assets/custom_login/css/sidebar.css",
+      "/assets/custom_login/css/morphosis_theme.css",
+    # "/assets/custom_login/css/workspace.css",
+    # "/assets/custom_login/css/listview.css",
+    # "/assets/custom_login/css/form.css",
+    # "/assets/custom_login/css/datatable.css",
+    # "/assets/custom_login/css/dialogs.css",
+    # "/assets/custom_login/css/reports.css",
+    # "/assets/custom_login/css/calendar.css",
+    # "/assets/custom_login/css/kanban.css",
+    # "/assets/custom_login/css/dashboard.css",
+    # "/assets/custom_login/css/charts.css",
+    # "/assets/custom_login/css/misc.css",
+    # "/assets/custom_login/css/erpnext_overrides.css",
+]
+# app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps
 # ------------------
 
