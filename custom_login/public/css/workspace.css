@@ -26,7 +26,11 @@ body[data-route="desk"] .shortcut-widget-box{
     box-shadow:none !important;
 
 }
-
+/* Desk app names */
+body[data-route="desk"] .desktop-container .icon-title,
+body[data-route=""] .desktop-container .icon-title {
+    color: #ffffff !important;
+}
 /* Desk app names */
 body[data-route=""] .shortcut-label,
 body[data-route="desk"] .shortcut-label{
