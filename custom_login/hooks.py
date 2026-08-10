@@ -12,7 +12,7 @@ app_include_css = [
       "/assets/custom_login/css/sidebar.css",
     #   "/assets/custom_login/css/morphosis_theme.css",
     "/assets/custom_login/css/workspace.css",
-    # "/assets/custom_login/css/listview.css",
+     "/assets/custom_login/css/desk_sidebar.css",
     # "/assets/custom_login/css/form.css",
     # "/assets/custom_login/css/datatable.css",
     # "/assets/custom_login/css/dialogs.css",
