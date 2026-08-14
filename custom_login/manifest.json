@@ -1,6 +1,6 @@
 {
-  "name": "Morphosis ERP",
-  "short_name": "Morphosis",
+  "name": "Morphosis School",
+  "short_name": "Morphosis School",
   "id": "/",
   "start_url": "/desk",
   "scope": "/",
@@ -12,7 +12,7 @@
   "orientation": "portrait",
   "background_color": "#080226",
   "theme_color": "#080226",
-  "description": "Morphosis ERP - Transformation Meets Excellence",
+  "description": "Morphosis School - Transformation Meets Excellence",
   "lang": "en",
   "dir": "ltr",
   "categories": [
