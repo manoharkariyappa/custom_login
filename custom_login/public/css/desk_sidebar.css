@@ -1,6 +1,6 @@
 /* =========================================================
-   ERPNext / Frappe Desk
-   Custom Workspace Sidebar
+   ERPNext Desk Workspace Sidebar
+   CSS ONLY - No JavaScript
    ========================================================= */
 
 
@@ -8,7 +8,7 @@
    1. WORKSPACE SIDEBAR
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcuts {
+body:has(.workspace > .workspace-shortcuts) .workspace-shortcuts {
     position: fixed !important;
 
     left: 0 !important;
@@ -28,14 +28,14 @@ body:has(.workspace) .workspace-shortcuts {
 
     gap: 5px !important;
 
-    /* Sidebar can scroll independently */
     overflow-y: auto !important;
     overflow-x: hidden !important;
 
     z-index: 100 !important;
 
-    /* Prevent Frappe transforms */
     transform: none !important;
+
+    -webkit-overflow-scrolling: touch !important;
 }
 
 
@@ -43,30 +43,31 @@ body:has(.workspace) .workspace-shortcuts {
    2. SIDEBAR SCROLLBAR
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcuts::-webkit-scrollbar {
-    width: 6px !important;
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcuts::-webkit-scrollbar {
+    width: 5px !important;
 }
 
-body:has(.workspace) .workspace-shortcuts::-webkit-scrollbar-track {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcuts::-webkit-scrollbar-track {
     background: transparent !important;
 }
 
-body:has(.workspace) .workspace-shortcuts::-webkit-scrollbar-thumb {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcuts::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.25) !important;
     border-radius: 10px !important;
 }
 
-body:has(.workspace) .workspace-shortcuts::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4) !important;
-}
-
 
 /* =========================================================
-   3. EACH WORKSPACE SHORTCUT
+   3. WORKSPACE SHORTCUT
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut {
     width: 100% !important;
+
     height: 48px !important;
     min-height: 48px !important;
 
@@ -98,10 +99,11 @@ body:has(.workspace) .workspace-shortcut {
 
 
 /* =========================================================
-   4. SHORTCUT ICON
+   4. ICON
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut .shortcut-icon {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut .shortcut-icon {
     width: 34px !important;
     height: 34px !important;
 
@@ -118,34 +120,28 @@ body:has(.workspace) .workspace-shortcut .shortcut-icon {
 
 
 /* =========================================================
-   5. ICON SVG / IMAGE
+   5. SVG ICON
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut .shortcut-icon svg {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut .shortcut-icon svg {
     width: 24px !important;
     height: 24px !important;
 
     color: white !important;
-
-    fill: currentColor !important;
-}
-
-body:has(.workspace) .workspace-shortcut .shortcut-icon img {
-    width: 24px !important;
-    height: 24px !important;
-
-    object-fit: contain !important;
 }
 
 
 /* =========================================================
-   6. SHORTCUT TEXT
+   6. LABEL
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut .shortcut-label {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut .shortcut-label {
     color: white !important;
 
     font-size: 14px !important;
+
     font-weight: 500 !important;
 
     line-height: 20px !important;
@@ -153,11 +149,12 @@ body:has(.workspace) .workspace-shortcut .shortcut-label {
     white-space: nowrap !important;
 
     overflow: hidden !important;
+
     text-overflow: ellipsis !important;
 
-    text-align: left !important;
-
     flex: 1 !important;
+
+    text-align: left !important;
 }
 
 
@@ -165,7 +162,8 @@ body:has(.workspace) .workspace-shortcut .shortcut-label {
    7. HOVER
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut:hover {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut:hover {
     background: #1b1240 !important;
 
     color: white !important;
@@ -175,10 +173,11 @@ body:has(.workspace) .workspace-shortcut:hover {
 
 
 /* =========================================================
-   8. ACTIVE SHORTCUT
+   8. ACTIVE
    ========================================================= */
 
-body:has(.workspace) .workspace-shortcut.active {
+body:has(.workspace > .workspace-shortcuts)
+.workspace-shortcut.active {
     background: #261653 !important;
 
     color: white !important;
@@ -189,62 +188,34 @@ body:has(.workspace) .workspace-shortcut.active {
    9. MAIN WORKSPACE
    ========================================================= */
 
-body:has(.workspace) .workspace {
+body:has(.workspace > .workspace-shortcuts)
+.workspace {
     margin-left: 240px !important;
 
-    min-height: calc(100vh - 94px) !important;
-
-    height: auto !important;
-
-    overflow: visible !important;
-
     box-sizing: border-box !important;
+
+    min-height: calc(100vh - 94px) !important;
 }
 
 
 /* =========================================================
-   10. WORKSPACE CONTENT
+   10. KEEP CONTENT SCROLLING
    ========================================================= */
 
-body:has(.workspace) .workspace .layout-main {
+/* DO NOT set overflow:hidden on body */
+
+body:has(.workspace > .workspace-shortcuts)
+.workspace {
     overflow: visible !important;
 }
 
-body:has(.workspace) .workspace .layout-main-section {
-    overflow: visible !important;
-}
-
-body:has(.workspace) .workspace .page-container {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-
 
 /* =========================================================
-   11. RESTORE BODY SCROLLING
+   11. NAVBAR
    ========================================================= */
 
-body:has(.workspace) {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-
-
-/* =========================================================
-   12. HTML SCROLLING
-   ========================================================= */
-
-html:has(body .workspace) {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-
-
-/* =========================================================
-   13. NAVBAR
-   ========================================================= */
-
-body:has(.workspace) .navbar {
+body:has(.workspace > .workspace-shortcuts)
+.navbar {
     margin-left: 0 !important;
 
     width: 100% !important;
@@ -254,80 +225,96 @@ body:has(.workspace) .navbar {
 
 
 /* =========================================================
-   14. DESK CONTENT
-   ========================================================= */
-
-body:has(.workspace) .desk-page {
-    margin-left: 0 !important;
-}
-
-
-/* =========================================================
-   15. PREVENT HORIZONTAL OVERFLOW
-   ========================================================= */
-
-body:has(.workspace) .workspace,
-body:has(.workspace) .workspace-shortcuts {
-    overflow-x: hidden !important;
-}
-
-
-/* =========================================================
-   16. MOBILE
+   12. MOBILE
    ========================================================= */
 
 @media (max-width: 768px) {
 
-    body:has(.workspace) .workspace-shortcuts {
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcuts {
+
         width: 200px !important;
 
+        height: calc(100dvh - 94px) !important;
+
         padding: 20px 10px !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        -webkit-overflow-scrolling: touch !important;
+
+        touch-action: pan-y !important;
     }
 
-    body:has(.workspace) .workspace {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace {
+
         margin-left: 200px !important;
     }
 
-    body:has(.workspace) .workspace-shortcut {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcut {
+
         padding: 8px 10px !important;
 
         gap: 10px !important;
     }
 
-    body:has(.workspace) .workspace-shortcut .shortcut-icon {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcut .shortcut-icon {
+
         width: 30px !important;
         height: 30px !important;
 
         min-width: 30px !important;
+        min-height: 30px !important;
     }
 
-    body:has(.workspace) .workspace-shortcut .shortcut-label {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcut .shortcut-label {
+
         font-size: 13px !important;
     }
 }
 
 
 /* =========================================================
-   17. SMALL MOBILE
+   13. SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
 
-    body:has(.workspace) .workspace-shortcuts {
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcuts {
+
         width: 180px !important;
     }
 
-    body:has(.workspace) .workspace {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace {
+
         margin-left: 180px !important;
     }
 
-    body:has(.workspace) .workspace-shortcut {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcut {
+
         gap: 8px !important;
 
         padding: 8px !important;
     }
 
-    body:has(.workspace) .workspace-shortcut .shortcut-label {
+
+    body:has(.workspace > .workspace-shortcuts)
+    .workspace-shortcut .shortcut-label {
+
         font-size: 12px !important;
     }
 }
