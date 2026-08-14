@@ -1,6 +1,10 @@
-/* ONLY ERPNext Desk Workspace */
+/* =========================================================
+   ONLY ERPNext Desk Workspace
+   ========================================================= */
+
 body:has(.workspace) .workspace-shortcuts {
     position: fixed !important;
+
     left: 0 !important;
     top: 94px !important;
     bottom: 0 !important;
@@ -17,13 +21,21 @@ body:has(.workspace) .workspace-shortcuts {
     gap: 5px !important;
 
     overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch !important;
 }
 
-/* Each existing module */
+
+/* =========================================================
+   Each Existing Module
+   ========================================================= */
+
 body:has(.workspace) .workspace-shortcut {
 
     width: 100% !important;
     height: 48px !important;
+    min-height: 48px !important;
 
     margin: 0 !important;
 
@@ -37,14 +49,22 @@ body:has(.workspace) .workspace-shortcut {
 
     padding: 8px 15px !important;
 
+    box-sizing: border-box !important;
+
     border-radius: 8px !important;
 
     color: white !important;
 
     text-align: left !important;
+
+    flex-shrink: 0 !important;
 }
 
-/* Icon */
+
+/* =========================================================
+   Icon
+   ========================================================= */
+
 body:has(.workspace) .workspace-shortcut .shortcut-icon {
 
     width: 34px !important;
@@ -53,7 +73,11 @@ body:has(.workspace) .workspace-shortcut .shortcut-icon {
     flex-shrink: 0 !important;
 }
 
-/* Text */
+
+/* =========================================================
+   Text
+   ========================================================= */
+
 body:has(.workspace) .workspace-shortcut .shortcut-label {
 
     color: white !important;
@@ -63,9 +87,17 @@ body:has(.workspace) .workspace-shortcut .shortcut-label {
     font-weight: 500 !important;
 
     white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
 }
 
-/* Hover */
+
+/* =========================================================
+   Hover
+   ========================================================= */
+
 body:has(.workspace) .workspace-shortcut:hover {
 
     background: #1b1240 !important;
@@ -73,16 +105,74 @@ body:has(.workspace) .workspace-shortcut:hover {
     transform: none !important;
 }
 
-/* Main Desk workspace */
+
+/* =========================================================
+   Main Desk Workspace
+   ========================================================= */
+
 body:has(.workspace) .workspace {
 
     margin-left: 240px !important;
 
+    height: auto !important;
+
+    min-height: 100vh !important;
+
+    overflow: visible !important;
 }
 
-/* Keep header unchanged */
+
+/* =========================================================
+   Keep Header Unchanged
+   ========================================================= */
+
 body:has(.workspace) .navbar {
 
     margin-left: 0 !important;
+}
 
+
+/* =========================================================
+   IMPORTANT: FIX FRAPPE BODY SCROLL
+   ========================================================= */
+
+html,
+body {
+
+    overflow-y: scroll !important;
+
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch !important;
+}
+
+
+/* =========================================================
+   MOBILE CHROME
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+
+        overflow-y: scroll !important;
+
+        overflow-x: hidden !important;
+
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    body:has(.workspace) .workspace-shortcuts {
+
+        height: calc(100dvh - 94px) !important;
+
+        overflow-y: auto !important;
+
+        overflow-x: hidden !important;
+
+        -webkit-overflow-scrolling: touch !important;
+
+        touch-action: pan-y !important;
+    }
 }
